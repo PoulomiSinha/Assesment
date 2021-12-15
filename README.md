@@ -7,7 +7,7 @@ The components of the feature "transferring of money between accounts" are :
 4)AccountsController : This component is used to delegate request from the end user for transferring of money between accounts to the service class.
 It will show Http status as OK(200) if the transaction is properly made. In the case of insufficient balance in the sender's account, it will show Http status as Bad Request(400)
 5)AccountsService : This component will implement the business logic for transferring of money between accounts.EmailNotificationService sends notification mails both accounts if the transaction committed.
-6)InsufficientBalanceException : If the transactionAmount < Sender's account balance, this class will handle the exception.
+6)InsufficientBalanceException : If the transactionAmount > Sender's account balance, this class will handle the exception.
 
 Steps to Run the application:
 1)Import the project as existing gradle project in STS/Eclipse.
@@ -19,10 +19,11 @@ Steps to Run the application:
 7)Select the project -> Run As > JUnit Test (Eclipse/STS)
 
 Further Improvement :
-1)Use of JPA Repository instaed of inMemory repository.
+1)Use of JPA Repository instead of inMemory repository.
 2)Use error handling classes for errorneous scenerios.
 3)Save the transaction details with transaction date time in a particular table.
 4)Proper Frontend UI will be provided to test manually.
+5)More custom exception scenerios need to be handled.
 
 
 
